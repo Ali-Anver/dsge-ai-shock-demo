@@ -1,0 +1,37 @@
+# Local server logs
+*.log
+nohup.out
+
+# macOS
+.DS_Store
+
+# Julia
+*.jl.*.cov
+*.jl.cov
+*.jl.mem
+deps/deps.jl
+
+# Editor
+.vscode/
+.idea/
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Don't push the entire DSGE.jl repo (too large)
+DSGE.jl/
+
+# Keep only essential files for web deployment
+Untitled-*.jl
+check_julia.sh
+launch_dashboard.sh
+quick_*.sh
+run_examples.sh
+test_fred_api.jl
+quick_demo_with_data.jl
+simple_dsge_demo.jl
+parameter_sweep_simulation.jl
+NY-FED.jl
+sweep_output.log
