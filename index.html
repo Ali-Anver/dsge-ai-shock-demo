@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSGE AI Shock Analysis - Interactive Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 40px;
+            border-bottom: 3px solid #34495e;
+        }
+
+        .header h1 {
+            font-size: 1.8em;
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 0.95em;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+        .controls {
+            padding: 30px 40px;
+            background: #fafafa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .control-group {
+            margin-bottom: 25px;
+        }
+
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+
+        .control-value {
+            background: #34495e;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #2c3e50;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .info-box {
+            background: #f8f9fa;
+            border-left: 3px solid #2c3e50;
+            padding: 15px 20px;
+            margin: 20px 40px;
+        }
+
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+
+        .charts {
+            padding: 30px 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .chart-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 40px;
+        }
+
+        .stat-card {
+            background: #fafafa;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #2c3e50;
+            font-family: 'Courier New', monospace;
+        }
+
+        .footer {
+            background: #2c3e50;
+            padding: 20px;
+            text-align: center;
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DSGE AI Shock Analysis</h1>
+            <p>Interactive Economic Model Dashboard</p>
+        </div>
+
+        <div class="info-box">
+            <h3>Model Description</h3>
+            <p>
+                This dashboard presents a Dynamic Stochastic General Equilibrium (DSGE) model 
+                analyzing the impact of AI productivity shocks on macroeconomic variables. 
+                The model simulates 125 scenarios across varying technology shock parameters 
+                and capital share levels. Each simulation includes a 25% technology shock at period 25, 
+                representing a significant AI-driven productivity improvement.
+            </p>
+        </div>
+
+        <div class="controls">
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Technology Persistence (ρ_z)</span>
+                    <span class="control-value" id="rho-value">0.95</span>
+                </div>
+                <input type="range" id="rho-slider" min="0" max="4" step="1" value="2">
+                <div class="range-labels">
+                    <span>0.90</span>
+                    <span>0.93</span>
+                    <span>0.95</span>
+                    <span>0.97</span>
+                    <span>0.98</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Technology Volatility (σ_z)</span>
+                    <span class="control-value" id="sigma-value">0.007</span>
+                </div>
+                <input type="range" id="sigma-slider" min="0" max="4" step="1" value="1">
+                <div class="range-labels">
+                    <span>0.005</span>
+                    <span>0.007</span>
+                    <span>0.010</span>
+                    <span>0.015</span>
+                    <span>0.020</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Capital Share (α)</span>
+                    <span class="control-value" id="alpha-value">0.36</span>
+                </div>
+                <input type="range" id="alpha-slider" min="0" max="4" step="1" value="2">
+                <div class="range-labels">
+                    <span>0.30</span>
+                    <span>0.33</span>
+                    <span>0.36</span>
+                    <span>0.40</span>
+                    <span>0.45</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Average GDP</div>
+                <div class="stat-value" id="stat-gdp">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Final GDP</div>
+                <div class="stat-value" id="stat-final-gdp">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Average Wages</div>
+                <div class="stat-value" id="stat-wages">--</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Capital Return</div>
+                <div class="stat-value" id="stat-return">--</div>
+            </div>
+        </div>
+
+        <div class="charts">
+            <div class="chart-container">
+                <div class="chart-title">Output (GDP) Over Time</div>
+                <div id="output-chart"></div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Consumption & Investment</div>
+                <div id="ci-chart"></div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Wages & Capital Returns</div>
+                <div id="wage-chart"></div>
+            </div>
+
+            <div class="chart-container">
+                <div class="chart-title">Technology Level (Total Factor Productivity)</div>
+                <div id="tech-chart"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            DSGE AI Shock Analysis | Data generated using calibrated Real Business Cycle model | 
+            <a href="https://github.com/Ali-Anver/dsge-ai-shock-demo" target="_blank">View on GitHub</a>
+        </div>
+            <p><strong>DSGE AI Shock Analysis Dashboard</strong></p>
+            <p>Data generated from calibrated DSGE model simulations</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Model parameters: β = 0.96, δ = 0.025 | Simulation: 100 periods with AI shock at period 25
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Parameter value arrays
+        const RHO_VALUES = [0.90, 0.93, 0.95, 0.97, 0.98];
+        const SIGMA_VALUES = [0.005, 0.007, 0.010, 0.015, 0.020];
+        const ALPHA_VALUES = [0.30, 0.33, 0.36, 0.40, 0.45];
+
+        let simulationData = null;
+
+        // Load simulation data
+        async function loadData() {
+            try {
+                const response = await fetch('simulation_results/simulation_data.json');
+                simulationData = await response.json();
+                console.log('Loaded', simulationData.simulations.length, 'simulations');
+                updateVisualization();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                alert('Error loading simulation data. Please run the Julia simulation first.');
+            }
+        }
+
+        // Find closest simulation
+        function findSimulation(alpha, rho, sigma) {
+            if (!simulationData) return null;
+            
+            return simulationData.simulations.find(sim => 
+                sim.α === alpha && sim.ρ_z === rho && sim.σ_z === sigma
+            );
+        }
+
+        // Update visualization
+        function updateVisualization() {
+            const alphaIdx = parseInt(document.getElementById('alpha-slider').value);
+            const rhoIdx = parseInt(document.getElementById('rho-slider').value);
+            const sigmaIdx = parseInt(document.getElementById('sigma-slider').value);
+
+            const alpha = ALPHA_VALUES[alphaIdx];
+            const rho = RHO_VALUES[rhoIdx];
+            const sigma = SIGMA_VALUES[sigmaIdx];
+
+            // Update displays
+            document.getElementById('alpha-value').textContent = alpha.toFixed(2);
+            document.getElementById('rho-value').textContent = rho.toFixed(2);
+            document.getElementById('sigma-value').textContent = sigma.toFixed(3);
+
+            // Find simulation
+            const sim = findSimulation(alpha, rho, sigma);
+            if (!sim) {
+                console.error('Simulation not found for:', { alpha, rho, sigma });
+                return;
+            }
+
+            // Update stats
+            document.getElementById('stat-gdp').textContent = sim.summary.avg_output.toFixed(4);
+            document.getElementById('stat-final-gdp').textContent = sim.summary.final_output.toFixed(4);
+            document.getElementById('stat-wages').textContent = sim.summary.avg_wages.toFixed(4);
+            document.getElementById('stat-return').textContent = sim.summary.avg_capital_return.toFixed(4);
+
+            // Plot charts
+            plotOutputChart(sim.data);
+            plotCIChart(sim.data);
+            plotWageChart(sim.data);
+            plotTechChart(sim.data);
+        }
+
+        function plotOutputChart(data) {
+            const trace = {
+                x: data.periods,
+                y: data.output,
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: '#2c3e50', width: 2.5 },
+                fill: 'tozeroy',
+                fillcolor: 'rgba(44, 62, 80, 0.1)',
+                name: 'GDP'
+            };
+
+            // Mark AI shock period
+            const shapes = [{
+                type: 'line',
+                x0: 25,
+                x1: 25,
+                y0: 0,
+                y1: Math.max(...data.output),
+                line: { color: '#e74c3c', width: 2, dash: 'dash' }
+            }];
+
+            const annotations = [{
+                x: 25,
+                y: Math.max(...data.output),
+                text: 'AI Shock (Period 25)',
+                showarrow: true,
+                arrowhead: 2,
+                ax: 40,
+                ay: -40,
+                font: { color: '#e74c3c', size: 11 }
+            }];
+
+            const layout = {
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Output (GDP)', gridcolor: '#e0e0e0' },
+                shapes: shapes,
+                annotations: annotations,
+                showlegend: false,
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('output-chart', [trace], layout, {responsive: true});
+        }
+
+        function plotCIChart(data) {
+            const trace1 = {
+                x: data.periods,
+                y: data.consumption,
+                type: 'scatter',
+                mode: 'lines',
+                name: 'Consumption',
+                line: { color: '#27ae60', width: 2 }
+            };
+
+            const trace2 = {
+                x: data.periods,
+                y: data.investment,
+                type: 'scatter',
+                mode: 'lines',
+                name: 'Investment',
+                line: { color: '#e67e22', width: 2 }
+            };
+
+            const layout = {
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Value', gridcolor: '#e0e0e0' },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('ci-chart', [trace1, trace2], layout, {responsive: true});
+        }
+
+        function plotWageChart(data) {
+            const trace1 = {
+                x: data.periods,
+                y: data.wages,
+                type: 'scatter',
+                mode: 'lines',
+                name: 'Wages',
+                line: { color: '#3498db', width: 2 }
+            };
+
+            const trace2 = {
+                x: data.periods,
+                y: data.capital_return,
+                type: 'scatter',
+                mode: 'lines',
+                name: 'Capital Return',
+                line: { color: '#9b59b6', width: 2 },
+                yaxis: 'y2'
+            };
+
+            const layout = {
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Wages', gridcolor: '#e0e0e0' },
+                yaxis2: {
+                    title: 'Capital Return',
+                    overlaying: 'y',
+                    side: 'right',
+                    gridcolor: '#e0e0e0'
+                },
+                showlegend: true,
+                legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
+                margin: { t: 20, r: 60, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('wage-chart', [trace1, trace2], layout, {responsive: true});
+        }
+
+        function plotTechChart(data) {
+            const trace = {
+                x: data.periods,
+                y: data.technology,
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: '#16a085', width: 2.5 },
+                name: 'Technology'
+            };
+
+            const layout = {
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Technology Level (TFP)', gridcolor: '#e0e0e0' },
+                showlegend: false,
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('tech-chart', [trace], layout, {responsive: true});
+        }
+
+        // Event listeners
+        document.getElementById('alpha-slider').addEventListener('input', updateVisualization);
+        document.getElementById('rho-slider').addEventListener('input', updateVisualization);
+        document.getElementById('sigma-slider').addEventListener('input', updateVisualization);
+
+        // Load data on page load
+        loadData();
+    </script>
+</body>
+</html>
