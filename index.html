@@ -313,6 +313,11 @@
             </div>
 
             <div class="chart-container">
+                <div class="chart-title">Employment (Labor)</div>
+                <div id="employment-chart"></div>
+            </div>
+
+            <div class="chart-container">
                 <div class="chart-title">Technology Level (Total Factor Productivity)</div>
                 <div id="tech-chart"></div>
             </div>
@@ -392,6 +397,7 @@
             plotOutputChart(sim.data);
             plotCIChart(sim.data);
             plotWageChart(sim.data);
+            plotEmploymentChart(sim.data);
             plotTechChart(sim.data);
         }
 
@@ -490,27 +496,44 @@
                 type: 'scatter',
                 mode: 'lines',
                 name: 'Capital Return',
-                line: { color: '#9b59b6', width: 2 },
-                yaxis: 'y2'
+                line: { color: '#9b59b6', width: 2 }
             };
 
             const layout = {
                 xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
-                yaxis: { title: 'Wages', gridcolor: '#e0e0e0' },
-                yaxis2: {
-                    title: 'Capital Return',
-                    overlaying: 'y',
-                    side: 'right',
-                    gridcolor: '#e0e0e0'
-                },
+                yaxis: { title: 'Value', gridcolor: '#e0e0e0' },
                 showlegend: true,
                 legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
-                margin: { t: 20, r: 60, b: 50, l: 60 },
+                margin: { t: 20, r: 20, b: 50, l: 60 },
                 plot_bgcolor: '#fafafa',
                 paper_bgcolor: 'white'
             };
 
             Plotly.newPlot('wage-chart', [trace1, trace2], layout, {responsive: true});
+        }
+
+        function plotEmploymentChart(data) {
+            const trace = {
+                x: data.periods,
+                y: data.labor,
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: '#e67e22', width: 2.5 },
+                fill: 'tozeroy',
+                fillcolor: 'rgba(230, 126, 34, 0.1)',
+                name: 'Employment'
+            };
+
+            const layout = {
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Employment (Labor)', gridcolor: '#e0e0e0' },
+                showlegend: false,
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
+            };
+
+            Plotly.newPlot('employment-chart', [trace], layout, {responsive: true});
         }
 
         function plotTechChart(data) {
