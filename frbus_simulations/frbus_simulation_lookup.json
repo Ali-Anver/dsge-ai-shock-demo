@@ -1,0 +1,1004 @@
+{
+  "simulations": [
+    {
+      "simulation_id": 1,
+      "productivity_shock": 0.01,
+      "persistence": 0.9,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.356378451784585,
+      "max_gdp_impact": 0.8078910000000121
+    },
+    {
+      "simulation_id": 2,
+      "productivity_shock": 0.01,
+      "persistence": 0.9,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.356378451784585,
+      "max_gdp_impact": 0.8078910000000121
+    },
+    {
+      "simulation_id": 3,
+      "productivity_shock": 0.01,
+      "persistence": 0.9,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.356378451784585,
+      "max_gdp_impact": 0.8078910000000121
+    },
+    {
+      "simulation_id": 4,
+      "productivity_shock": 0.01,
+      "persistence": 0.9,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.356378451784585,
+      "max_gdp_impact": 0.8078910000000121
+    },
+    {
+      "simulation_id": 5,
+      "productivity_shock": 0.01,
+      "persistence": 0.9,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.356378451784585,
+      "max_gdp_impact": 0.8078910000000121
+    },
+    {
+      "simulation_id": 6,
+      "productivity_shock": 0.01,
+      "persistence": 0.93,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.4708298457519497,
+      "max_gdp_impact": 0.9045823167867013
+    },
+    {
+      "simulation_id": 7,
+      "productivity_shock": 0.01,
+      "persistence": 0.93,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.4708298457519497,
+      "max_gdp_impact": 0.9045823167867013
+    },
+    {
+      "simulation_id": 8,
+      "productivity_shock": 0.01,
+      "persistence": 0.93,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.4708298457519497,
+      "max_gdp_impact": 0.9045823167867013
+    },
+    {
+      "simulation_id": 9,
+      "productivity_shock": 0.01,
+      "persistence": 0.93,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.4708298457519497,
+      "max_gdp_impact": 0.9045823167867013
+    },
+    {
+      "simulation_id": 10,
+      "productivity_shock": 0.01,
+      "persistence": 0.93,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.4708298457519497,
+      "max_gdp_impact": 0.9045823167867013
+    },
+    {
+      "simulation_id": 11,
+      "productivity_shock": 0.01,
+      "persistence": 0.95,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.5840180280604187,
+      "max_gdp_impact": 0.9920633634492333
+    },
+    {
+      "simulation_id": 12,
+      "productivity_shock": 0.01,
+      "persistence": 0.95,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.5840180280604187,
+      "max_gdp_impact": 0.9920633634492333
+    },
+    {
+      "simulation_id": 13,
+      "productivity_shock": 0.01,
+      "persistence": 0.95,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.5840180280604187,
+      "max_gdp_impact": 0.9920633634492333
+    },
+    {
+      "simulation_id": 14,
+      "productivity_shock": 0.01,
+      "persistence": 0.95,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.5840180280604187,
+      "max_gdp_impact": 0.9920633634492333
+    },
+    {
+      "simulation_id": 15,
+      "productivity_shock": 0.01,
+      "persistence": 0.95,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.5840180280604187,
+      "max_gdp_impact": 0.9920633634492333
+    },
+    {
+      "simulation_id": 16,
+      "productivity_shock": 0.01,
+      "persistence": 0.97,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.7436800484185124,
+      "max_gdp_impact": 1.1118528432263446
+    },
+    {
+      "simulation_id": 17,
+      "productivity_shock": 0.01,
+      "persistence": 0.97,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.7436800484185124,
+      "max_gdp_impact": 1.1118528432263446
+    },
+    {
+      "simulation_id": 18,
+      "productivity_shock": 0.01,
+      "persistence": 0.97,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.7436800484185124,
+      "max_gdp_impact": 1.1118528432263446
+    },
+    {
+      "simulation_id": 19,
+      "productivity_shock": 0.01,
+      "persistence": 0.97,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.7436800484185124,
+      "max_gdp_impact": 1.1118528432263446
+    },
+    {
+      "simulation_id": 20,
+      "productivity_shock": 0.01,
+      "persistence": 0.97,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.7436800484185124,
+      "max_gdp_impact": 1.1118528432263446
+    },
+    {
+      "simulation_id": 21,
+      "productivity_shock": 0.01,
+      "persistence": 0.98,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.8478457170856842,
+      "max_gdp_impact": 1.1933287449979986
+    },
+    {
+      "simulation_id": 22,
+      "productivity_shock": 0.01,
+      "persistence": 0.98,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.8478457170856842,
+      "max_gdp_impact": 1.1933287449979986
+    },
+    {
+      "simulation_id": 23,
+      "productivity_shock": 0.01,
+      "persistence": 0.98,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.8478457170856842,
+      "max_gdp_impact": 1.1933287449979986
+    },
+    {
+      "simulation_id": 24,
+      "productivity_shock": 0.01,
+      "persistence": 0.98,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.8478457170856842,
+      "max_gdp_impact": 1.1933287449979986
+    },
+    {
+      "simulation_id": 25,
+      "productivity_shock": 0.01,
+      "persistence": 0.98,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.8478457170856842,
+      "max_gdp_impact": 1.1933287449979986
+    },
+    {
+      "simulation_id": 26,
+      "productivity_shock": 0.02,
+      "persistence": 0.9,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.7127569035691554,
+      "max_gdp_impact": 1.61578200000001
+    },
+    {
+      "simulation_id": 27,
+      "productivity_shock": 0.02,
+      "persistence": 0.9,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.7127569035691554,
+      "max_gdp_impact": 1.61578200000001
+    },
+    {
+      "simulation_id": 28,
+      "productivity_shock": 0.02,
+      "persistence": 0.9,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.7127569035691554,
+      "max_gdp_impact": 1.61578200000001
+    },
+    {
+      "simulation_id": 29,
+      "productivity_shock": 0.02,
+      "persistence": 0.9,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.7127569035691554,
+      "max_gdp_impact": 1.61578200000001
+    },
+    {
+      "simulation_id": 30,
+      "productivity_shock": 0.02,
+      "persistence": 0.9,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.7127569035691554,
+      "max_gdp_impact": 1.61578200000001
+    },
+    {
+      "simulation_id": 31,
+      "productivity_shock": 0.02,
+      "persistence": 0.93,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 0.9416596915038973,
+      "max_gdp_impact": 1.8091646335733884
+    },
+    {
+      "simulation_id": 32,
+      "productivity_shock": 0.02,
+      "persistence": 0.93,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 0.9416596915038973,
+      "max_gdp_impact": 1.8091646335733884
+    },
+    {
+      "simulation_id": 33,
+      "productivity_shock": 0.02,
+      "persistence": 0.93,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 0.9416596915038973,
+      "max_gdp_impact": 1.8091646335733884
+    },
+    {
+      "simulation_id": 34,
+      "productivity_shock": 0.02,
+      "persistence": 0.93,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 0.9416596915038973,
+      "max_gdp_impact": 1.8091646335733884
+    },
+    {
+      "simulation_id": 35,
+      "productivity_shock": 0.02,
+      "persistence": 0.93,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 0.9416596915038973,
+      "max_gdp_impact": 1.8091646335733884
+    },
+    {
+      "simulation_id": 36,
+      "productivity_shock": 0.02,
+      "persistence": 0.95,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.168036056120822,
+      "max_gdp_impact": 1.9841267268984524
+    },
+    {
+      "simulation_id": 37,
+      "productivity_shock": 0.02,
+      "persistence": 0.95,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.168036056120822,
+      "max_gdp_impact": 1.9841267268984524
+    },
+    {
+      "simulation_id": 38,
+      "productivity_shock": 0.02,
+      "persistence": 0.95,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.168036056120822,
+      "max_gdp_impact": 1.9841267268984524
+    },
+    {
+      "simulation_id": 39,
+      "productivity_shock": 0.02,
+      "persistence": 0.95,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.168036056120822,
+      "max_gdp_impact": 1.9841267268984524
+    },
+    {
+      "simulation_id": 40,
+      "productivity_shock": 0.02,
+      "persistence": 0.95,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.168036056120822,
+      "max_gdp_impact": 1.9841267268984524
+    },
+    {
+      "simulation_id": 41,
+      "productivity_shock": 0.02,
+      "persistence": 0.97,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.4873600968370302,
+      "max_gdp_impact": 2.223705686452689
+    },
+    {
+      "simulation_id": 42,
+      "productivity_shock": 0.02,
+      "persistence": 0.97,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.4873600968370302,
+      "max_gdp_impact": 2.223705686452689
+    },
+    {
+      "simulation_id": 43,
+      "productivity_shock": 0.02,
+      "persistence": 0.97,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.4873600968370302,
+      "max_gdp_impact": 2.223705686452689
+    },
+    {
+      "simulation_id": 44,
+      "productivity_shock": 0.02,
+      "persistence": 0.97,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.4873600968370302,
+      "max_gdp_impact": 2.223705686452689
+    },
+    {
+      "simulation_id": 45,
+      "productivity_shock": 0.02,
+      "persistence": 0.97,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.4873600968370302,
+      "max_gdp_impact": 2.223705686452689
+    },
+    {
+      "simulation_id": 46,
+      "productivity_shock": 0.02,
+      "persistence": 0.98,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.6956914341713631,
+      "max_gdp_impact": 2.386657489995983
+    },
+    {
+      "simulation_id": 47,
+      "productivity_shock": 0.02,
+      "persistence": 0.98,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.6956914341713631,
+      "max_gdp_impact": 2.386657489995983
+    },
+    {
+      "simulation_id": 48,
+      "productivity_shock": 0.02,
+      "persistence": 0.98,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.6956914341713631,
+      "max_gdp_impact": 2.386657489995983
+    },
+    {
+      "simulation_id": 49,
+      "productivity_shock": 0.02,
+      "persistence": 0.98,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.6956914341713631,
+      "max_gdp_impact": 2.386657489995983
+    },
+    {
+      "simulation_id": 50,
+      "productivity_shock": 0.02,
+      "persistence": 0.98,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.6956914341713631,
+      "max_gdp_impact": 2.386657489995983
+    },
+    {
+      "simulation_id": 51,
+      "productivity_shock": 0.03,
+      "persistence": 0.9,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.069135355353735,
+      "max_gdp_impact": 2.4236729999999937
+    },
+    {
+      "simulation_id": 52,
+      "productivity_shock": 0.03,
+      "persistence": 0.9,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.069135355353735,
+      "max_gdp_impact": 2.4236729999999937
+    },
+    {
+      "simulation_id": 53,
+      "productivity_shock": 0.03,
+      "persistence": 0.9,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.069135355353735,
+      "max_gdp_impact": 2.4236729999999937
+    },
+    {
+      "simulation_id": 54,
+      "productivity_shock": 0.03,
+      "persistence": 0.9,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.069135355353735,
+      "max_gdp_impact": 2.4236729999999937
+    },
+    {
+      "simulation_id": 55,
+      "productivity_shock": 0.03,
+      "persistence": 0.9,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.069135355353735,
+      "max_gdp_impact": 2.4236729999999937
+    },
+    {
+      "simulation_id": 56,
+      "productivity_shock": 0.03,
+      "persistence": 0.93,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.4124895372558455,
+      "max_gdp_impact": 2.713746950360104
+    },
+    {
+      "simulation_id": 57,
+      "productivity_shock": 0.03,
+      "persistence": 0.93,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.4124895372558455,
+      "max_gdp_impact": 2.713746950360104
+    },
+    {
+      "simulation_id": 58,
+      "productivity_shock": 0.03,
+      "persistence": 0.93,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.4124895372558455,
+      "max_gdp_impact": 2.713746950360104
+    },
+    {
+      "simulation_id": 59,
+      "productivity_shock": 0.03,
+      "persistence": 0.93,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.4124895372558455,
+      "max_gdp_impact": 2.713746950360104
+    },
+    {
+      "simulation_id": 60,
+      "productivity_shock": 0.03,
+      "persistence": 0.93,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.4124895372558455,
+      "max_gdp_impact": 2.713746950360104
+    },
+    {
+      "simulation_id": 61,
+      "productivity_shock": 0.03,
+      "persistence": 0.95,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.7520540841812267,
+      "max_gdp_impact": 2.976190090347643
+    },
+    {
+      "simulation_id": 62,
+      "productivity_shock": 0.03,
+      "persistence": 0.95,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.7520540841812267,
+      "max_gdp_impact": 2.976190090347643
+    },
+    {
+      "simulation_id": 63,
+      "productivity_shock": 0.03,
+      "persistence": 0.95,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.7520540841812267,
+      "max_gdp_impact": 2.976190090347643
+    },
+    {
+      "simulation_id": 64,
+      "productivity_shock": 0.03,
+      "persistence": 0.95,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.7520540841812267,
+      "max_gdp_impact": 2.976190090347643
+    },
+    {
+      "simulation_id": 65,
+      "productivity_shock": 0.03,
+      "persistence": 0.95,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.7520540841812267,
+      "max_gdp_impact": 2.976190090347643
+    },
+    {
+      "simulation_id": 66,
+      "productivity_shock": 0.03,
+      "persistence": 0.97,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 2.2310401452555384,
+      "max_gdp_impact": 3.3355585296790338
+    },
+    {
+      "simulation_id": 67,
+      "productivity_shock": 0.03,
+      "persistence": 0.97,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 2.2310401452555384,
+      "max_gdp_impact": 3.3355585296790338
+    },
+    {
+      "simulation_id": 68,
+      "productivity_shock": 0.03,
+      "persistence": 0.97,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 2.2310401452555384,
+      "max_gdp_impact": 3.3355585296790338
+    },
+    {
+      "simulation_id": 69,
+      "productivity_shock": 0.03,
+      "persistence": 0.97,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 2.2310401452555384,
+      "max_gdp_impact": 3.3355585296790338
+    },
+    {
+      "simulation_id": 70,
+      "productivity_shock": 0.03,
+      "persistence": 0.97,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 2.2310401452555384,
+      "max_gdp_impact": 3.3355585296790338
+    },
+    {
+      "simulation_id": 71,
+      "productivity_shock": 0.03,
+      "persistence": 0.98,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 2.5435371512570573,
+      "max_gdp_impact": 3.5799862349939815
+    },
+    {
+      "simulation_id": 72,
+      "productivity_shock": 0.03,
+      "persistence": 0.98,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 2.5435371512570573,
+      "max_gdp_impact": 3.5799862349939815
+    },
+    {
+      "simulation_id": 73,
+      "productivity_shock": 0.03,
+      "persistence": 0.98,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 2.5435371512570573,
+      "max_gdp_impact": 3.5799862349939815
+    },
+    {
+      "simulation_id": 74,
+      "productivity_shock": 0.03,
+      "persistence": 0.98,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 2.5435371512570573,
+      "max_gdp_impact": 3.5799862349939815
+    },
+    {
+      "simulation_id": 75,
+      "productivity_shock": 0.03,
+      "persistence": 0.98,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 2.5435371512570573,
+      "max_gdp_impact": 3.5799862349939815
+    },
+    {
+      "simulation_id": 76,
+      "productivity_shock": 0.05,
+      "persistence": 0.9,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 1.781892258922894,
+      "max_gdp_impact": 4.039455000000032
+    },
+    {
+      "simulation_id": 77,
+      "productivity_shock": 0.05,
+      "persistence": 0.9,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 1.781892258922894,
+      "max_gdp_impact": 4.039455000000032
+    },
+    {
+      "simulation_id": 78,
+      "productivity_shock": 0.05,
+      "persistence": 0.9,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 1.781892258922894,
+      "max_gdp_impact": 4.039455000000032
+    },
+    {
+      "simulation_id": 79,
+      "productivity_shock": 0.05,
+      "persistence": 0.9,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 1.781892258922894,
+      "max_gdp_impact": 4.039455000000032
+    },
+    {
+      "simulation_id": 80,
+      "productivity_shock": 0.05,
+      "persistence": 0.9,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 1.781892258922894,
+      "max_gdp_impact": 4.039455000000032
+    },
+    {
+      "simulation_id": 81,
+      "productivity_shock": 0.05,
+      "persistence": 0.93,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 2.354149228759742,
+      "max_gdp_impact": 4.522911583933492
+    },
+    {
+      "simulation_id": 82,
+      "productivity_shock": 0.05,
+      "persistence": 0.93,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 2.354149228759742,
+      "max_gdp_impact": 4.522911583933492
+    },
+    {
+      "simulation_id": 83,
+      "productivity_shock": 0.05,
+      "persistence": 0.93,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 2.354149228759742,
+      "max_gdp_impact": 4.522911583933492
+    },
+    {
+      "simulation_id": 84,
+      "productivity_shock": 0.05,
+      "persistence": 0.93,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 2.354149228759742,
+      "max_gdp_impact": 4.522911583933492
+    },
+    {
+      "simulation_id": 85,
+      "productivity_shock": 0.05,
+      "persistence": 0.93,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 2.354149228759742,
+      "max_gdp_impact": 4.522911583933492
+    },
+    {
+      "simulation_id": 86,
+      "productivity_shock": 0.05,
+      "persistence": 0.95,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 2.920090140302055,
+      "max_gdp_impact": 4.960316817246095
+    },
+    {
+      "simulation_id": 87,
+      "productivity_shock": 0.05,
+      "persistence": 0.95,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 2.920090140302055,
+      "max_gdp_impact": 4.960316817246095
+    },
+    {
+      "simulation_id": 88,
+      "productivity_shock": 0.05,
+      "persistence": 0.95,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 2.920090140302055,
+      "max_gdp_impact": 4.960316817246095
+    },
+    {
+      "simulation_id": 89,
+      "productivity_shock": 0.05,
+      "persistence": 0.95,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 2.920090140302055,
+      "max_gdp_impact": 4.960316817246095
+    },
+    {
+      "simulation_id": 90,
+      "productivity_shock": 0.05,
+      "persistence": 0.95,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 2.920090140302055,
+      "max_gdp_impact": 4.960316817246095
+    },
+    {
+      "simulation_id": 91,
+      "productivity_shock": 0.05,
+      "persistence": 0.97,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 3.7184002420925624,
+      "max_gdp_impact": 5.55926421613168
+    },
+    {
+      "simulation_id": 92,
+      "productivity_shock": 0.05,
+      "persistence": 0.97,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 3.7184002420925624,
+      "max_gdp_impact": 5.55926421613168
+    },
+    {
+      "simulation_id": 93,
+      "productivity_shock": 0.05,
+      "persistence": 0.97,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 3.7184002420925624,
+      "max_gdp_impact": 5.55926421613168
+    },
+    {
+      "simulation_id": 94,
+      "productivity_shock": 0.05,
+      "persistence": 0.97,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 3.7184002420925624,
+      "max_gdp_impact": 5.55926421613168
+    },
+    {
+      "simulation_id": 95,
+      "productivity_shock": 0.05,
+      "persistence": 0.97,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 3.7184002420925624,
+      "max_gdp_impact": 5.55926421613168
+    },
+    {
+      "simulation_id": 96,
+      "productivity_shock": 0.05,
+      "persistence": 0.98,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 4.239228585428423,
+      "max_gdp_impact": 5.966643724989979
+    },
+    {
+      "simulation_id": 97,
+      "productivity_shock": 0.05,
+      "persistence": 0.98,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 4.239228585428423,
+      "max_gdp_impact": 5.966643724989979
+    },
+    {
+      "simulation_id": 98,
+      "productivity_shock": 0.05,
+      "persistence": 0.98,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 4.239228585428423,
+      "max_gdp_impact": 5.966643724989979
+    },
+    {
+      "simulation_id": 99,
+      "productivity_shock": 0.05,
+      "persistence": 0.98,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 4.239228585428423,
+      "max_gdp_impact": 5.966643724989979
+    },
+    {
+      "simulation_id": 100,
+      "productivity_shock": 0.05,
+      "persistence": 0.98,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 4.239228585428423,
+      "max_gdp_impact": 5.966643724989979
+    },
+    {
+      "simulation_id": 101,
+      "productivity_shock": 0.08,
+      "persistence": 0.9,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 2.851027614276633,
+      "max_gdp_impact": 6.463128000000012
+    },
+    {
+      "simulation_id": 102,
+      "productivity_shock": 0.08,
+      "persistence": 0.9,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 2.851027614276633,
+      "max_gdp_impact": 6.463128000000012
+    },
+    {
+      "simulation_id": 103,
+      "productivity_shock": 0.08,
+      "persistence": 0.9,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 2.851027614276633,
+      "max_gdp_impact": 6.463128000000012
+    },
+    {
+      "simulation_id": 104,
+      "productivity_shock": 0.08,
+      "persistence": 0.9,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 2.851027614276633,
+      "max_gdp_impact": 6.463128000000012
+    },
+    {
+      "simulation_id": 105,
+      "productivity_shock": 0.08,
+      "persistence": 0.9,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 2.851027614276633,
+      "max_gdp_impact": 6.463128000000012
+    },
+    {
+      "simulation_id": 106,
+      "productivity_shock": 0.08,
+      "persistence": 0.93,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 3.766638766015602,
+      "max_gdp_impact": 7.236658534293625
+    },
+    {
+      "simulation_id": 107,
+      "productivity_shock": 0.08,
+      "persistence": 0.93,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 3.766638766015602,
+      "max_gdp_impact": 7.236658534293625
+    },
+    {
+      "simulation_id": 108,
+      "productivity_shock": 0.08,
+      "persistence": 0.93,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 3.766638766015602,
+      "max_gdp_impact": 7.236658534293625
+    },
+    {
+      "simulation_id": 109,
+      "productivity_shock": 0.08,
+      "persistence": 0.93,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 3.766638766015602,
+      "max_gdp_impact": 7.236658534293625
+    },
+    {
+      "simulation_id": 110,
+      "productivity_shock": 0.08,
+      "persistence": 0.93,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 3.766638766015602,
+      "max_gdp_impact": 7.236658534293625
+    },
+    {
+      "simulation_id": 111,
+      "productivity_shock": 0.08,
+      "persistence": 0.95,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 4.672144224483286,
+      "max_gdp_impact": 7.936506907593753
+    },
+    {
+      "simulation_id": 112,
+      "productivity_shock": 0.08,
+      "persistence": 0.95,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 4.672144224483286,
+      "max_gdp_impact": 7.936506907593753
+    },
+    {
+      "simulation_id": 113,
+      "productivity_shock": 0.08,
+      "persistence": 0.95,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 4.672144224483286,
+      "max_gdp_impact": 7.936506907593753
+    },
+    {
+      "simulation_id": 114,
+      "productivity_shock": 0.08,
+      "persistence": 0.95,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 4.672144224483286,
+      "max_gdp_impact": 7.936506907593753
+    },
+    {
+      "simulation_id": 115,
+      "productivity_shock": 0.08,
+      "persistence": 0.95,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 4.672144224483286,
+      "max_gdp_impact": 7.936506907593753
+    },
+    {
+      "simulation_id": 116,
+      "productivity_shock": 0.08,
+      "persistence": 0.97,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 5.949440387348107,
+      "max_gdp_impact": 8.894822745810743
+    },
+    {
+      "simulation_id": 117,
+      "productivity_shock": 0.08,
+      "persistence": 0.97,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 5.949440387348107,
+      "max_gdp_impact": 8.894822745810743
+    },
+    {
+      "simulation_id": 118,
+      "productivity_shock": 0.08,
+      "persistence": 0.97,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 5.949440387348107,
+      "max_gdp_impact": 8.894822745810743
+    },
+    {
+      "simulation_id": 119,
+      "productivity_shock": 0.08,
+      "persistence": 0.97,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 5.949440387348107,
+      "max_gdp_impact": 8.894822745810743
+    },
+    {
+      "simulation_id": 120,
+      "productivity_shock": 0.08,
+      "persistence": 0.97,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 5.949440387348107,
+      "max_gdp_impact": 8.894822745810743
+    },
+    {
+      "simulation_id": 121,
+      "productivity_shock": 0.08,
+      "persistence": 0.98,
+      "monetary_response": 0.5,
+      "avg_gdp_impact": 6.782765736685488,
+      "max_gdp_impact": 9.546629959984017
+    },
+    {
+      "simulation_id": 122,
+      "productivity_shock": 0.08,
+      "persistence": 0.98,
+      "monetary_response": 1.0,
+      "avg_gdp_impact": 6.782765736685488,
+      "max_gdp_impact": 9.546629959984017
+    },
+    {
+      "simulation_id": 123,
+      "productivity_shock": 0.08,
+      "persistence": 0.98,
+      "monetary_response": 1.5,
+      "avg_gdp_impact": 6.782765736685488,
+      "max_gdp_impact": 9.546629959984017
+    },
+    {
+      "simulation_id": 124,
+      "productivity_shock": 0.08,
+      "persistence": 0.98,
+      "monetary_response": 2.0,
+      "avg_gdp_impact": 6.782765736685488,
+      "max_gdp_impact": 9.546629959984017
+    },
+    {
+      "simulation_id": 125,
+      "productivity_shock": 0.08,
+      "persistence": 0.98,
+      "monetary_response": 2.5,
+      "avg_gdp_impact": 6.782765736685488,
+      "max_gdp_impact": 9.546629959984017
+    }
+  ]
+}
