@@ -13,42 +13,44 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
             min-height: 100vh;
             padding: 20px;
+            color: #333;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         }
 
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2c3e50;
             color: white;
-            padding: 40px;
-            text-align: center;
+            padding: 30px 40px;
+            border-bottom: 3px solid #34495e;
         }
 
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            font-weight: 400;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
+            font-size: 0.95em;
+            opacity: 0.85;
+            font-weight: 300;
         }
 
         .controls {
-            padding: 30px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #e9ecef;
+            padding: 30px 40px;
+            background: #fafafa;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         .control-group {
@@ -60,22 +62,24 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
-            font-weight: 600;
-            color: #333;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95em;
         }
 
         .control-value {
-            background: #667eea;
+            background: #34495e;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 4px 12px;
+            border-radius: 3px;
             font-size: 0.9em;
+            font-family: 'Courier New', monospace;
         }
 
         input[type="range"] {
             width: 100%;
-            height: 8px;
-            border-radius: 5px;
+            height: 6px;
+            border-radius: 3px;
             background: #ddd;
             outline: none;
             -webkit-appearance: none;
@@ -84,22 +88,23 @@
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: #667eea;
+            background: #2c3e50;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
         input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: #667eea;
+            background: #2c3e50;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            border: none;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
         .range-labels {
@@ -111,25 +116,27 @@
         }
 
         .info-box {
-            background: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin: 20px 30px;
-            border-radius: 5px;
+            background: #f8f9fa;
+            border-left: 3px solid #2c3e50;
+            padding: 15px 20px;
+            margin: 20px 40px;
         }
 
         .info-box h3 {
-            color: #1976d2;
+            color: #2c3e50;
             margin-bottom: 8px;
+            font-size: 1em;
+            font-weight: 600;
         }
 
         .info-box p {
             color: #555;
             line-height: 1.6;
+            font-size: 0.9em;
         }
 
         .charts {
-            padding: 30px;
+            padding: 30px 40px;
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
@@ -137,118 +144,135 @@
 
         .chart-container {
             background: white;
-            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
         }
 
         .chart-title {
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 600;
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+            border-bottom: 2px solid #2c3e50;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 15px;
-            margin: 20px 30px;
+            margin: 20px 40px;
         }
 
         .stat-card {
-            background: white;
+            background: #fafafa;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
             text-align: center;
         }
 
         .stat-label {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #666;
             margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
         .stat-value {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #667eea;
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #2c3e50;
+            font-family: 'Courier New', monospace;
         }
 
         .footer {
-            background: #f8f9fa;
+            background: #2c3e50;
             padding: 20px;
             text-align: center;
-            color: #666;
-            border-top: 2px solid #e9ecef;
+            color: #ecf0f1;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         .loading {
             text-align: center;
             padding: 40px;
-            font-size: 1.2em;
-            color: #667eea;
+            font-size: 1.1em;
+            color: #2c3e50;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🚀 DSGE AI Shock Analysis</h1>
+            <h1>DSGE AI Shock Analysis</h1>
             <p>Interactive Economic Model Dashboard</p>
-            <p style="font-size: 0.9em; margin-top: 10px;">By Ali Anver | DGSE for Keep the Future Human</p>
         </div>
 
         <div class="info-box">
-            <h3>About This Model</h3>
+            <h3>Model Description</h3>
             <p>
-                This interactive dashboard shows how changes in <strong>technology shock parameters</strong> 
-                and <strong>capital share</strong> affect economic outcomes in a Dynamic Stochastic General 
-                Equilibrium (DSGE) model. Adjust the sliders to see how different AI productivity scenarios 
-                impact GDP, consumption, investment, and wages.
+                This dashboard presents a Dynamic Stochastic General Equilibrium (DSGE) model 
+                analyzing the impact of AI productivity shocks on macroeconomic variables. 
+                The model simulates 125 scenarios across varying technology shock parameters 
+                and capital share levels. Each simulation includes a 25% technology shock at period 25, 
+                representing a significant AI-driven productivity improvement.
             </p>
         </div>
 
         <div class="controls">
             <div class="control-group">
                 <div class="control-label">
-                    <span>📈 Technology Persistence (ρ_z)</span>
+                    <span>Technology Persistence (ρ_z)</span>
                     <span class="control-value" id="rho-value">0.95</span>
                 </div>
                 <input type="range" id="rho-slider" min="0" max="4" step="1" value="2">
                 <div class="range-labels">
-                    <span>0.90 (Low)</span>
-                    <span>0.95 (Baseline)</span>
-                    <span>0.98 (AI Era)</span>
+                    <span>0.90</span>
+                    <span>0.93</span>
+                    <span>0.95</span>
+                    <span>0.97</span>
+                    <span>0.98</span>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>💥 Technology Volatility (σ_z)</span>
+                    <span>Technology Volatility (σ_z)</span>
                     <span class="control-value" id="sigma-value">0.007</span>
                 </div>
                 <input type="range" id="sigma-slider" min="0" max="4" step="1" value="1">
                 <div class="range-labels">
-                    <span>0.005 (Small)</span>
-                    <span>0.010 (Moderate)</span>
-                    <span>0.020 (Large AI Shock)</span>
+                    <span>0.005</span>
+                    <span>0.007</span>
+                    <span>0.010</span>
+                    <span>0.015</span>
+                    <span>0.020</span>
                 </div>
             </div>
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>⚖️ Capital Share (α)</span>
+                    <span>Capital Share (α)</span>
                     <span class="control-value" id="alpha-value">0.36</span>
                 </div>
                 <input type="range" id="alpha-slider" min="0" max="4" step="1" value="2">
                 <div class="range-labels">
-                    <span>0.30 (Labor-intensive)</span>
-                    <span>0.36 (Baseline)</span>
-                    <span>0.45 (Capital-intensive)</span>
+                    <span>0.30</span>
+                    <span>0.33</span>
+                    <span>0.36</span>
+                    <span>0.40</span>
+                    <span>0.45</span>
                 </div>
             </div>
         </div>
@@ -274,27 +298,30 @@
 
         <div class="charts">
             <div class="chart-container">
-                <div class="chart-title">📊 Output (GDP) Over Time</div>
+                <div class="chart-title">Output (GDP) Over Time</div>
                 <div id="output-chart"></div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">💰 Consumption & Investment</div>
+                <div class="chart-title">Consumption & Investment</div>
                 <div id="ci-chart"></div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">💼 Wages & Capital Returns</div>
+                <div class="chart-title">Wages & Capital Returns</div>
                 <div id="wage-chart"></div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">⚙️ Technology Level (Productivity)</div>
+                <div class="chart-title">Technology Level (Total Factor Productivity)</div>
                 <div id="tech-chart"></div>
             </div>
         </div>
 
         <div class="footer">
+            DSGE AI Shock Analysis | Data generated using calibrated Real Business Cycle model | 
+            <a href="https://github.com/Ali-Anver/dsge-ai-shock-demo" target="_blank">View on GitHub</a>
+        </div>
             <p><strong>DSGE AI Shock Analysis Dashboard</strong></p>
             <p>Data generated from calibrated DSGE model simulations</p>
             <p style="margin-top: 10px; font-size: 0.9em;">
@@ -374,9 +401,9 @@
                 y: data.output,
                 type: 'scatter',
                 mode: 'lines',
-                line: { color: '#667eea', width: 3 },
+                line: { color: '#2c3e50', width: 2.5 },
                 fill: 'tozeroy',
-                fillcolor: 'rgba(102, 126, 234, 0.2)',
+                fillcolor: 'rgba(44, 62, 80, 0.1)',
                 name: 'GDP'
             };
 
@@ -387,27 +414,29 @@
                 x1: 25,
                 y0: 0,
                 y1: Math.max(...data.output),
-                line: { color: 'red', width: 2, dash: 'dash' }
+                line: { color: '#e74c3c', width: 2, dash: 'dash' }
             }];
 
             const annotations = [{
                 x: 25,
                 y: Math.max(...data.output),
-                text: 'AI Shock',
+                text: 'AI Shock (Period 25)',
                 showarrow: true,
                 arrowhead: 2,
                 ax: 40,
                 ay: -40,
-                font: { color: 'red' }
+                font: { color: '#e74c3c', size: 11 }
             }];
 
             const layout = {
-                xaxis: { title: 'Period' },
-                yaxis: { title: 'Output (GDP)' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Output (GDP)', gridcolor: '#e0e0e0' },
                 shapes: shapes,
                 annotations: annotations,
                 showlegend: false,
-                margin: { t: 20, r: 20, b: 50, l: 60 }
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
             };
 
             Plotly.newPlot('output-chart', [trace], layout, {responsive: true});
@@ -420,7 +449,7 @@
                 type: 'scatter',
                 mode: 'lines',
                 name: 'Consumption',
-                line: { color: '#4CAF50', width: 2 }
+                line: { color: '#27ae60', width: 2 }
             };
 
             const trace2 = {
@@ -429,15 +458,17 @@
                 type: 'scatter',
                 mode: 'lines',
                 name: 'Investment',
-                line: { color: '#FF9800', width: 2 }
+                line: { color: '#e67e22', width: 2 }
             };
 
             const layout = {
-                xaxis: { title: 'Period' },
-                yaxis: { title: 'Value' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Value', gridcolor: '#e0e0e0' },
                 showlegend: true,
-                legend: { x: 0.7, y: 1 },
-                margin: { t: 20, r: 20, b: 50, l: 60 }
+                legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
             };
 
             Plotly.newPlot('ci-chart', [trace1, trace2], layout, {responsive: true});
@@ -450,7 +481,7 @@
                 type: 'scatter',
                 mode: 'lines',
                 name: 'Wages',
-                line: { color: '#2196F3', width: 2 }
+                line: { color: '#3498db', width: 2 }
             };
 
             const trace2 = {
@@ -459,21 +490,24 @@
                 type: 'scatter',
                 mode: 'lines',
                 name: 'Capital Return',
-                line: { color: '#9C27B0', width: 2 },
+                line: { color: '#9b59b6', width: 2 },
                 yaxis: 'y2'
             };
 
             const layout = {
-                xaxis: { title: 'Period' },
-                yaxis: { title: 'Wages' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Wages', gridcolor: '#e0e0e0' },
                 yaxis2: {
                     title: 'Capital Return',
                     overlaying: 'y',
-                    side: 'right'
+                    side: 'right',
+                    gridcolor: '#e0e0e0'
                 },
                 showlegend: true,
-                legend: { x: 0.7, y: 1 },
-                margin: { t: 20, r: 60, b: 50, l: 60 }
+                legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
+                margin: { t: 20, r: 60, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
             };
 
             Plotly.newPlot('wage-chart', [trace1, trace2], layout, {responsive: true});
@@ -485,15 +519,17 @@
                 y: data.technology,
                 type: 'scatter',
                 mode: 'lines',
-                line: { color: '#E91E63', width: 3 },
+                line: { color: '#16a085', width: 2.5 },
                 name: 'Technology'
             };
 
             const layout = {
-                xaxis: { title: 'Period' },
-                yaxis: { title: 'Technology Level (A)' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Technology Level (TFP)', gridcolor: '#e0e0e0' },
                 showlegend: false,
-                margin: { t: 20, r: 20, b: 50, l: 60 }
+                margin: { t: 20, r: 20, b: 50, l: 60 },
+                plot_bgcolor: '#fafafa',
+                paper_bgcolor: 'white'
             };
 
             Plotly.newPlot('tech-chart', [trace], layout, {responsive: true});
