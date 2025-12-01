@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Productivity Shock: FRB/US Model Analysis</title>
+    <title>DSGE AI Shock Analysis - Interactive Dashboard</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
     <style>
         * {
@@ -237,43 +237,28 @@
     <div class="container">
         <div class="header">
             <a href="index.html" class="nav-button">← Home</a>
-            <h1>FRB/US Model: AI Productivity Shock Analysis</h1>
-            <p>Federal Reserve Board US Model - Interactive Dashboard</p>
+            <h1>DSGE AI Shock Analysis</h1>
+            <p>Interactive Economic Model Dashboard</p>
         </div>
 
         <div class="info-box">
             <h3>Model Description</h3>
             <p>
-                This dashboard presents simulations from a simplified FRB/US-style macroeconomic model
-                analyzing the impact of AI-driven productivity shocks. The model includes 125 scenarios
-                across varying productivity shock sizes (1%-8%), persistence parameters (0.90-0.98),
-                and monetary policy responses (0.5-2.5). Each simulation tracks GDP deviation, inflation,
-                unemployment, and interest rates over 40 quarters (10 years) following an AI shock in Q3 2026.
+                This dashboard presents a Dynamic Stochastic General Equilibrium (DSGE) model 
+                analyzing the impact of AI productivity shocks on macroeconomic variables. 
+                The model simulates 125 scenarios across varying technology shock parameters 
+                and capital share levels. Each simulation includes a 25% technology shock at period 25, 
+                representing a significant AI-driven productivity improvement.
             </p>
         </div>
 
         <div class="controls">
             <div class="control-group">
                 <div class="control-label">
-                    <span>Productivity Shock Size</span>
-                    <span class="control-value" id="shock-value">3%</span>
+                    <span>Technology Persistence (ρ_z)</span>
+                    <span class="control-value" id="rho-value">0.95</span>
                 </div>
-                <input type="range" id="shock-slider" min="0" max="4" step="1" value="2">
-                <div class="range-labels">
-                    <span>1%</span>
-                    <span>2%</span>
-                    <span>3%</span>
-                    <span>5%</span>
-                    <span>8%</span>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <div class="control-label">
-                    <span>Shock Persistence (ρ)</span>
-                    <span class="control-value" id="persistence-value">0.95</span>
-                </div>
-                <input type="range" id="persistence-slider" min="0" max="4" step="1" value="2">
+                <input type="range" id="rho-slider" min="0" max="4" step="1" value="2">
                 <div class="range-labels">
                     <span>0.90</span>
                     <span>0.93</span>
@@ -285,160 +270,179 @@
 
             <div class="control-group">
                 <div class="control-label">
-                    <span>Monetary Policy Response</span>
-                    <span class="control-value" id="monetary-value">1.5</span>
+                    <span>Technology Volatility (σ_z)</span>
+                    <span class="control-value" id="sigma-value">0.007</span>
                 </div>
-                <input type="range" id="monetary-slider" min="0" max="4" step="1" value="2">
+                <input type="range" id="sigma-slider" min="0" max="4" step="1" value="1">
                 <div class="range-labels">
-                    <span>0.5</span>
-                    <span>1.0</span>
-                    <span>1.5</span>
-                    <span>2.0</span>
-                    <span>2.5</span>
+                    <span>0.005</span>
+                    <span>0.007</span>
+                    <span>0.010</span>
+                    <span>0.015</span>
+                    <span>0.020</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>Capital Share (α)</span>
+                    <span class="control-value" id="alpha-value">0.36</span>
+                </div>
+                <input type="range" id="alpha-slider" min="0" max="4" step="1" value="2">
+                <div class="range-labels">
+                    <span>0.30</span>
+                    <span>0.33</span>
+                    <span>0.36</span>
+                    <span>0.40</span>
+                    <span>0.45</span>
                 </div>
             </div>
         </div>
 
         <div class="stats-grid" id="stats-grid">
             <div class="stat-card">
-                <div class="stat-label">Avg GDP Impact</div>
+                <div class="stat-label">Average GDP</div>
                 <div class="stat-value" id="stat-gdp">--</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Max GDP Impact</div>
-                <div class="stat-value" id="stat-max-gdp">--</div>
+                <div class="stat-label">Final GDP</div>
+                <div class="stat-value" id="stat-final-gdp">--</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Peak Inflation</div>
-                <div class="stat-value" id="stat-inflation">--</div>
+                <div class="stat-label">Average Wages</div>
+                <div class="stat-value" id="stat-wages">--</div>
             </div>
             <div class="stat-card">
-                <div class="stat-label">Min Unemployment</div>
-                <div class="stat-value" id="stat-unemployment">--</div>
+                <div class="stat-label">Capital Return</div>
+                <div class="stat-value" id="stat-return">--</div>
             </div>
         </div>
 
         <div class="charts">
             <div class="chart-container">
-                <div class="chart-title">GDP Deviation from Baseline (%)</div>
-                <div id="gdp-chart"></div>
+                <div class="chart-title">Output (GDP) Over Time</div>
+                <div id="output-chart"></div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">Inflation & Unemployment Deviations</div>
-                <div id="inflation-chart"></div>
+                <div class="chart-title">Consumption & Investment</div>
+                <div id="ci-chart"></div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">Interest Rate & Productivity Shock</div>
-                <div id="rate-chart"></div>
+                <div class="chart-title">Wages & Capital Returns</div>
+                <div id="wage-chart"></div>
             </div>
 
             <div class="chart-container">
-                <div class="chart-title">Output Gap Components</div>
-                <div id="components-chart"></div>
+                <div class="chart-title">Technology Level (Total Factor Productivity)</div>
+                <div id="tech-chart"></div>
             </div>
         </div>
 
         <div class="footer">
-            FRB/US-Style AI Productivity Analysis | Simplified Federal Reserve Model | 
+            DSGE AI Shock Analysis | Data generated using calibrated Real Business Cycle model | 
             <a href="https://github.com/Ali-Anver/dsge-ai-shock-demo" target="_blank">View on GitHub</a>
+        </div>
+            <p><strong>DSGE AI Shock Analysis Dashboard</strong></p>
+            <p>Data generated from calibrated DSGE model simulations</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                Model parameters: β = 0.96, δ = 0.025 | Simulation: 100 periods with AI shock at period 25
+            </p>
         </div>
     </div>
 
     <script>
         // Parameter value arrays
-        const SHOCK_VALUES = [0.01, 0.02, 0.03, 0.05, 0.08];
-        const PERSISTENCE_VALUES = [0.90, 0.93, 0.95, 0.97, 0.98];
-        const MONETARY_VALUES = [0.5, 1.0, 1.5, 2.0, 2.5];
+        const RHO_VALUES = [0.90, 0.93, 0.95, 0.97, 0.98];
+        const SIGMA_VALUES = [0.005, 0.007, 0.010, 0.015, 0.020];
+        const ALPHA_VALUES = [0.30, 0.33, 0.36, 0.40, 0.45];
 
         let simulationData = null;
 
         // Load simulation data
         async function loadData() {
             try {
-                const response = await fetch('frbus_simulations/frbus_simulation_data.json');
+                const response = await fetch('simulation_results/simulation_data.json');
                 simulationData = await response.json();
-                console.log('Loaded', simulationData.simulations.length, 'FRB/US simulations');
+                console.log('Loaded', simulationData.simulations.length, 'simulations');
                 updateVisualization();
             } catch (error) {
                 console.error('Error loading data:', error);
-                alert('Error loading simulation data. Please run the Python simulation first.');
+                alert('Error loading simulation data. Please run the Julia simulation first.');
             }
         }
 
         // Find closest simulation
-        function findSimulation(shock, persistence, monetary) {
+        function findSimulation(alpha, rho, sigma) {
             if (!simulationData) return null;
             
             return simulationData.simulations.find(sim => 
-                sim.productivity_shock === shock && 
-                sim.persistence === persistence && 
-                sim.monetary_response === monetary
+                sim.α === alpha && sim.ρ_z === rho && sim.σ_z === sigma
             );
         }
 
         // Update visualization
         function updateVisualization() {
-            const shockIdx = parseInt(document.getElementById('shock-slider').value);
-            const persistenceIdx = parseInt(document.getElementById('persistence-slider').value);
-            const monetaryIdx = parseInt(document.getElementById('monetary-slider').value);
+            const alphaIdx = parseInt(document.getElementById('alpha-slider').value);
+            const rhoIdx = parseInt(document.getElementById('rho-slider').value);
+            const sigmaIdx = parseInt(document.getElementById('sigma-slider').value);
 
-            const shock = SHOCK_VALUES[shockIdx];
-            const persistence = PERSISTENCE_VALUES[persistenceIdx];
-            const monetary = MONETARY_VALUES[monetaryIdx];
+            const alpha = ALPHA_VALUES[alphaIdx];
+            const rho = RHO_VALUES[rhoIdx];
+            const sigma = SIGMA_VALUES[sigmaIdx];
 
             // Update displays
-            document.getElementById('shock-value').textContent = (shock * 100).toFixed(0) + '%';
-            document.getElementById('persistence-value').textContent = persistence.toFixed(2);
-            document.getElementById('monetary-value').textContent = monetary.toFixed(1);
+            document.getElementById('alpha-value').textContent = alpha.toFixed(2);
+            document.getElementById('rho-value').textContent = rho.toFixed(2);
+            document.getElementById('sigma-value').textContent = sigma.toFixed(3);
 
             // Find simulation
-            const sim = findSimulation(shock, persistence, monetary);
+            const sim = findSimulation(alpha, rho, sigma);
             if (!sim) {
-                console.error('Simulation not found for:', { shock, persistence, monetary });
+                console.error('Simulation not found for:', { alpha, rho, sigma });
                 return;
             }
 
             // Update stats
-            document.getElementById('stat-gdp').textContent = sim.summary.avg_gdp_impact.toFixed(2) + '%';
-            document.getElementById('stat-max-gdp').textContent = sim.summary.max_gdp_impact.toFixed(2) + '%';
-            document.getElementById('stat-inflation').textContent = sim.summary.peak_inflation.toFixed(2) + '%';
-            document.getElementById('stat-unemployment').textContent = sim.summary.min_unemployment.toFixed(2) + '%';
+            document.getElementById('stat-gdp').textContent = sim.summary.avg_output.toFixed(4);
+            document.getElementById('stat-final-gdp').textContent = sim.summary.final_output.toFixed(4);
+            document.getElementById('stat-wages').textContent = sim.summary.avg_wages.toFixed(4);
+            document.getElementById('stat-return').textContent = sim.summary.avg_capital_return.toFixed(4);
 
             // Plot charts
-            plotGDPChart(sim.data);
-            plotInflationChart(sim.data);
-            plotRateChart(sim.data);
-            plotComponentsChart(sim.data);
+            plotOutputChart(sim.data);
+            plotCIChart(sim.data);
+            plotWageChart(sim.data);
+            plotTechChart(sim.data);
         }
 
-        function plotGDPChart(data) {
+        function plotOutputChart(data) {
             const trace = {
                 x: data.periods,
-                y: data.gdp_deviation.map(val => val * 100),  // Convert to percentage
+                y: data.output,
                 type: 'scatter',
                 mode: 'lines',
                 line: { color: '#2c3e50', width: 2.5 },
                 fill: 'tozeroy',
                 fillcolor: 'rgba(44, 62, 80, 0.1)',
-                name: 'GDP Deviation'
+                name: 'GDP'
             };
 
-            // Mark AI shock period (period 6)
+            // Mark AI shock period
             const shapes = [{
                 type: 'line',
-                x0: 6,
-                x1: 6,
+                x0: 25,
+                x1: 25,
                 y0: 0,
-                y1: Math.max(...data.gdp_deviation) * 100,
+                y1: Math.max(...data.output),
                 line: { color: '#e74c3c', width: 2, dash: 'dash' }
             }];
 
             const annotations = [{
-                x: 6,
-                y: Math.max(...data.gdp_deviation) * 100,
-                text: 'AI Shock (Q3 2026)',
+                x: 25,
+                y: Math.max(...data.output),
+                text: 'AI Shock (Period 25)',
                 showarrow: true,
                 arrowhead: 2,
                 ax: 40,
@@ -447,8 +451,8 @@
             }];
 
             const layout = {
-                xaxis: { title: 'Quarter', gridcolor: '#e0e0e0' },
-                yaxis: { title: 'GDP Deviation (%)', gridcolor: '#e0e0e0' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Output (GDP)', gridcolor: '#e0e0e0' },
                 shapes: shapes,
                 annotations: annotations,
                 showlegend: false,
@@ -457,31 +461,31 @@
                 paper_bgcolor: 'white'
             };
 
-            Plotly.newPlot('gdp-chart', [trace], layout, {responsive: true});
+            Plotly.newPlot('output-chart', [trace], layout, {responsive: true});
         }
 
-        function plotInflationChart(data) {
+        function plotCIChart(data) {
             const trace1 = {
                 x: data.periods,
-                y: data.inflation_deviation.map(val => val * 100),
+                y: data.consumption,
                 type: 'scatter',
                 mode: 'lines',
-                name: 'Inflation',
-                line: { color: '#e67e22', width: 2 }
+                name: 'Consumption',
+                line: { color: '#27ae60', width: 2 }
             };
 
             const trace2 = {
                 x: data.periods,
-                y: data.unemployment_deviation.map(val => val * 100),
+                y: data.investment,
                 type: 'scatter',
                 mode: 'lines',
-                name: 'Unemployment',
-                line: { color: '#3498db', width: 2 }
+                name: 'Investment',
+                line: { color: '#e67e22', width: 2 }
             };
 
             const layout = {
-                xaxis: { title: 'Quarter', gridcolor: '#e0e0e0' },
-                yaxis: { title: 'Deviation (percentage points)', gridcolor: '#e0e0e0' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Value', gridcolor: '#e0e0e0' },
                 showlegend: true,
                 legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
                 margin: { t: 20, r: 20, b: 50, l: 60 },
@@ -489,34 +493,34 @@
                 paper_bgcolor: 'white'
             };
 
-            Plotly.newPlot('inflation-chart', [trace1, trace2], layout, {responsive: true});
+            Plotly.newPlot('ci-chart', [trace1, trace2], layout, {responsive: true});
         }
 
-        function plotRateChart(data) {
+        function plotWageChart(data) {
             const trace1 = {
                 x: data.periods,
-                y: data.interest_rate_deviation.map(val => val * 100),
+                y: data.wages,
                 type: 'scatter',
                 mode: 'lines',
-                name: 'Interest Rate',
-                line: { color: '#9b59b6', width: 2 }
+                name: 'Wages',
+                line: { color: '#3498db', width: 2 }
             };
 
             const trace2 = {
                 x: data.periods,
-                y: data.productivity_shock.map(val => val * 100),
+                y: data.capital_return,
                 type: 'scatter',
                 mode: 'lines',
-                name: 'Productivity Shock',
-                line: { color: '#16a085', width: 2 },
+                name: 'Capital Return',
+                line: { color: '#9b59b6', width: 2 },
                 yaxis: 'y2'
             };
 
             const layout = {
-                xaxis: { title: 'Quarter', gridcolor: '#e0e0e0' },
-                yaxis: { title: 'Interest Rate Deviation (bp)', gridcolor: '#e0e0e0' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Wages', gridcolor: '#e0e0e0' },
                 yaxis2: {
-                    title: 'Productivity Shock (%)',
+                    title: 'Capital Return',
                     overlaying: 'y',
                     side: 'right',
                     gridcolor: '#e0e0e0'
@@ -528,45 +532,35 @@
                 paper_bgcolor: 'white'
             };
 
-            Plotly.newPlot('rate-chart', [trace1, trace2], layout, {responsive: true});
+            Plotly.newPlot('wage-chart', [trace1, trace2], layout, {responsive: true});
         }
 
-        function plotComponentsChart(data) {
-            const trace1 = {
+        function plotTechChart(data) {
+            const trace = {
                 x: data.periods,
-                y: data.consumption_deviation.map(val => val * 100),
+                y: data.technology,
                 type: 'scatter',
                 mode: 'lines',
-                name: 'Consumption',
-                line: { color: '#27ae60', width: 2 }
-            };
-
-            const trace2 = {
-                x: data.periods,
-                y: data.investment_deviation.map(val => val * 100),
-                type: 'scatter',
-                mode: 'lines',
-                name: 'Investment',
-                line: { color: '#c0392b', width: 2 }
+                line: { color: '#16a085', width: 2.5 },
+                name: 'Technology'
             };
 
             const layout = {
-                xaxis: { title: 'Quarter', gridcolor: '#e0e0e0' },
-                yaxis: { title: 'Deviation (%)', gridcolor: '#e0e0e0' },
-                showlegend: true,
-                legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.8)' },
+                xaxis: { title: 'Period', gridcolor: '#e0e0e0' },
+                yaxis: { title: 'Technology Level (TFP)', gridcolor: '#e0e0e0' },
+                showlegend: false,
                 margin: { t: 20, r: 20, b: 50, l: 60 },
                 plot_bgcolor: '#fafafa',
                 paper_bgcolor: 'white'
             };
 
-            Plotly.newPlot('components-chart', [trace1, trace2], layout, {responsive: true});
+            Plotly.newPlot('tech-chart', [trace], layout, {responsive: true});
         }
 
         // Event listeners
-        document.getElementById('shock-slider').addEventListener('input', updateVisualization);
-        document.getElementById('persistence-slider').addEventListener('input', updateVisualization);
-        document.getElementById('monetary-slider').addEventListener('input', updateVisualization);
+        document.getElementById('alpha-slider').addEventListener('input', updateVisualization);
+        document.getElementById('rho-slider').addEventListener('input', updateVisualization);
+        document.getElementById('sigma-slider').addEventListener('input', updateVisualization);
 
         // Load data on page load
         loadData();
